@@ -19,3 +19,7 @@
 [iTransparentnost](https://transparentnost.zagreb.hr/hr/isplate/sc-isplate)
 
 ## Bakić AI aplikacije
+
+
+## Ingine iritantne ideje
+
