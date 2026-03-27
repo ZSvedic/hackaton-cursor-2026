@@ -16,4 +16,13 @@
 ## SF ideje
 1.  Face recognition pri ulasku u bolnicu + Ideja 2 (Lista dolazaka)
 
-
+## Zanimljivi javni podaci
+- Geolokacije tramvajskih stajališta ZET - https://data.gov.hr/ckan/hr/dataset/geoportal-tramvajska-stajalista-zet
+- Geoportal sportskih objekata grada Zagreba
+- Geolokacije sustava javnih bicikala.
+- Geolokacije biciklističkih staza grada Zagreba.
+- Zone prema Pravilniku o određivanju naknada za postavljanje ploča s natpisom, plakata, reklama i reklamnih panoa.
+- Geolokacije nadzornih kamera
+- Geolokacije električnih punionica na području grada Zagreba
+- Prikaz povijesnih granica grada Zagreba u periodu od 1850. - 1992. godine.
+- Lokacije pojilica s pitkom vodom na području Grada Zagreba
