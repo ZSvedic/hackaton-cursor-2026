@@ -17,7 +17,7 @@
 1.  Face recognition pri ulasku u bolnicu + Ideja 2 (Lista dolazaka)
 
 ## Zanimljivi javni podaci
-- Grafiti na javnim i privatnim površinama
+- Grafiti na javnim i privatnim površinama - Potrebno je terensko prikupljanje slika - NIJE IZVEDIVO
 - Geolokacije tramvajskih stajališta ZET - https://data.gov.hr/ckan/hr/dataset/geoportal-tramvajska-stajalista-zet
 - Geoportal sportskih objekata grada Zagreba
 - Geolokacije sustava javnih bicikala.
@@ -27,3 +27,86 @@
 - Geolokacije električnih punionica na području grada Zagreba
 - Prikaz povijesnih granica grada Zagreba u periodu od 1850. - 1992. godine.
 - Lokacije pojilica s pitkom vodom na području Grada Zagreba
+
+### CHAT GPT prijedlog 1
+
+“Urban Flow Optimizer”
+Problem
+
+Grad ima:
+
+tram stajališta
+bike sustav
+biciklističke staze
+EV punionice
+
+→ ali NEMA integriran pogled kako se ljudi stvarno kreću.
+
+Rješenje
+
+App koji daje:
+👉 optimalnu multimodalnu rutu (tram + bike + pješke)
+uz realne constraintove grada
+
+Ključne funkcionalnosti
+preporuka:
+tram → bicikl → pješke
+uzima u obzir:
+dostupnost bicikala (lokacije stanica)
+biciklističke staze
+udaljenost do pojilica (UX bonus)
+EV punionice (za e-bike / e-scooter proširenje)
+
+➡️ slično kao Google Maps, ali:
+
+fokusirano na Zagreb + lokalne specifičnosti
+koristi open data (što je hackathon plus)
+Tehnički stack
+graph model:
+nodes = stajališta + bike station + punionice
+edges = staze + udaljenosti
+algoritam:
+Dijkstra / A*
+vizualizacija:
+Leaflet
+“Wow faktor”
+eco score (CO₂ saving)
+“hydration-aware routing” (pojilice)
+“bike friendly index” po kvartu
+
+### CHAT GPT prijedlog 2
+
+“Ad Placement Intelligence” (B2B, vrlo pametno)
+
+Ovo je najbliže realnom biznisu.
+
+Problem
+
+Grad ima:
+
+zone za reklame
+prometne tokove (proxy preko tram/bike)
+
+→ ali oglašavanje se ne optimizira data-driven
+
+Rješenje
+
+Tool koji kaže:
+👉 gdje postaviti reklamu za max exposure
+
+Kako radi
+
+Kombinira:
+
+tram stajališta (foot traffic proxy)
+bike station usage (mobilnost)
+sportske objekte (event-driven traffic)
+zone dozvola (constraint)
+Output
+“Top 10 lokacija za billboard”
+ROI score
+Bonus
+segmentacija:
+sportaši
+commuteri
+turisti
