@@ -26,6 +26,7 @@
   - Vecina ljudi zeli vidjeti racune prije placanja.
 
 ## Grad Zagreb dostupni APIs
+- [Portal otvorenih podataka](https://data.gov.hr/ckan/hr/dataset)
 - 
 
 ## Garaže ZG slobodan parking
