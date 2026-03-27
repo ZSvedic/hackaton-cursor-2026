@@ -17,6 +17,7 @@
 1.  Face recognition pri ulasku u bolnicu + Ideja 2 (Lista dolazaka)
 
 ## Zanimljivi javni podaci
+- Grafiti na javnim i privatnim površinama
 - Geolokacije tramvajskih stajališta ZET - https://data.gov.hr/ckan/hr/dataset/geoportal-tramvajska-stajalista-zet
 - Geoportal sportskih objekata grada Zagreba
 - Geolokacije sustava javnih bicikala.
