@@ -27,7 +27,7 @@
 
 ## Grad Zagreb dostupni APIs
 - [Portal otvorenih podataka](https://data.gov.hr/ckan/hr/dataset)
-- 
+- [Portal otvorenih podataka Grada Zagreba](https://data.zagreb.hr/)
 
 ## Garaže ZG slobodan parking
 
