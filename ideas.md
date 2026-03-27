@@ -14,7 +14,11 @@
   - Nemamo vjerodanicu.
   - Za konkretne informacije treba zvati/emailovat bolnice.
 
-## Otvaranje trajnog naloga
+## Otvaranje SEPA trajnog naloga
+- Zel ima sliku keepa, ali nije detaljna: https://drive.google.com/file/d/12_1L2HSw-_S9ZmloMdeTzF8QGIwqoHrK/view?usp=sharing
+
+## Grad Zagreb
+- 
 
 ## Garaže ZG slobodan parking
 
