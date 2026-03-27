@@ -9,15 +9,23 @@
 
 ## Prijava termina za bolnice
 - Postoji [CZIH lista prvih termina](https://liste.cezih.hr/) za preglede [npr. za UZV dojke]](https://liste.cezih.hr/PrviTermin?pId=478&regId=114).
-- Problemi
+- Pros:
+  - Zdravstvena pomoc prolazi dobro kod publike.
+- Cons:
   - Zdravstvo su privatni GDPR podatci.
-  - Nemamo vjerodanicu.
+  - Nemamo vjerodjanicu.
   - Za konkretne informacije treba zvati/emailovat bolnice.
 
 ## Otvaranje SEPA trajnog naloga
 - Zel ima sliku keepa, ali nije detaljna: https://drive.google.com/file/d/12_1L2HSw-_S9ZmloMdeTzF8QGIwqoHrK/view?usp=sharing
+- Svaki izdavac rezija ima svoj postupak.
+- Pros:
+  - Relativno jednostavno.
+- Cons:
+  - Otvaranje SEPA trajnog naloga treba samo jednom.
+  - Vecina ljudi zeli vidjeti racune prije placanja.
 
-## Grad Zagreb
+## Grad Zagreb dostupni APIs
 - 
 
 ## Garaže ZG slobodan parking
