@@ -8,6 +8,11 @@
 # Ideas
 
 ## Prijava termina za bolnice
+- Postoji [CZIH lista prvih termina](https://liste.cezih.hr/) za preglede [npr. za UZV dojke]](https://liste.cezih.hr/PrviTermin?pId=478&regId=114).
+- Problemi
+  - Zdravstvo su privatni GDPR podatci.
+  - Nemamo vjerodanicu.
+  - Za konkretne informacije treba zvati/emailovat bolnice.
 
 ## Otvaranje trajnog naloga
 
@@ -20,6 +25,4 @@
 
 ## Bakić AI aplikacije
 
-
-## Ingine iritantne ideje
-
+## 
