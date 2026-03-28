@@ -6,7 +6,9 @@ INPUT 1 – Initial Data Entry (Form)
 - Selection of the desired medical exam
 - Preferred examination date
 
-OUTPUT 1 - Map-based visualization of available healthcare providers for the selected date of the appointment - "Booking like"
+OUTPUT 1 
+- Search for the available health providers in Zagreb, if not available on that date search for first available date after requested date, and 20 days earlier of that date
+- Map-based visualization of available healthcare providers for the selected date of the appointment - "Booking like"
 
 INPUT 2 - selection of the desired healthcare provider on the map
 
@@ -33,3 +35,4 @@ OUTPUT 2 - Prefilling of the form
 - online-narucivanje
 - Online narudžba
 - Centralno naručivanje
+
