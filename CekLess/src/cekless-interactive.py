@@ -75,13 +75,14 @@ def website_from_email(email):
 def format_card(slot, hospitals):
     info = hospitals.get(slot["email"], {})
     web_url = info.get("webUrl", "") or website_from_email(slot["email"])
+    emails = [e.strip() for e in slot["email"].split(",")]
     lines = [
         f"Slot {slot['SlotID']} — {slot['datetime']} ({slot['waitDays']} days wait)",
         slot["hospital"],
-        f"mailto:{slot['email']}?subject=Appointment&body=Hello",
-        f"tel:{slot['telefon']}",
-        web_url,
     ]
+    for email in emails:
+        lines.append(f"mailto:{email}?subject=Appointment&body=Hello")
+    lines += [f"tel:{slot['telefon']}", web_url]
     for field in ["address", "bookingUrl", "mapsUrl"]:
         if info.get(field):
             lines.append(info[field])

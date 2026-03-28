@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CekLess — Find Appointments</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <style>
+    body { max-width: 960px; margin: 0 auto; padding: 1rem; font-family: system-ui, sans-serif; }
+    h1 { color: #2d3e50; }
+    .search-form { margin-bottom: 1.5rem; }
+    .search-form select, .search-form input { margin-right: .5rem; }
+    #status { margin: 1rem 0; color: #555; }
+    #results { margin-top: 1rem; }
+    #results table { width: 100%; }
+    #results tr { cursor: pointer; }
+    #results tr:hover { background: #eef; }
+    .card { background: #f7f7f7; border: 1px solid #ddd; border-radius: 8px; padding: 1.2rem; margin-top: 1rem; max-width: 600px; }
+    .card h3 { margin-top: 0; }
+    .card a { display: block; margin: .3rem 0; }
+    .card .field-label { font-weight: bold; font-size: .85rem; color: #666; margin-top: .6rem; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>CekLess</h1>
+  <p>Find available medical appointments in Croatia.</p>
+
+  <form class="search-form pure-form" onsubmit="return app.search(event)">
+    <label for="proc">Procedure:</label>
+    <input id="proc-search" type="text" list="proc-list" placeholder="Type to filter..." autocomplete="off">
+    <datalist id="proc-list"></datalist>
+    <input id="proc" type="hidden">
+
+    <label for="reg">Region:</label>
+    <input id="reg-search" type="text" list="reg-list" placeholder="Type to filter..." autocomplete="off">
+    <datalist id="reg-list"></datalist>
+    <input id="reg" type="hidden">
+
+    <button type="submit" class="pure-button pure-button-primary">Search</button>
+  </form>
+
+  <div id="status" class="hidden"></div>
+  <div id="results" class="hidden"></div>
+  <div id="card" class="hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

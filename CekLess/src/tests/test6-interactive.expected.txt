@@ -13,9 +13,11 @@ SlotID,datetime,waitDays,hospital,email,telefon,telefaks
 12,2026-08-19-11-20,144,KBC Sestre milosrdnice (KBC SM VINOGRADSKA),"narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",+38513787593,+38513787792
 13,2026-08-27-11-50,152,KBC Sestre milosrdnice (KBC SM VINOGRADSKA),"narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",+38513787593,+38513787792
 
-Slot 1 — 2026-03-30-08-00 (2 days wait)
-KBC Zagreb
-mailto:bojcen@kbc-zagreb.hr?subject=Appointment&body=Hello
-tel:+38512367720
-https://www.kbc-zagreb.hr
-https://www.kbc-zagreb.hr/#
+Slot 4 — 2026-04-01-11-20 (4 days wait)
+KBC Sestre milosrdnice (KBC SM VINOGRADSKA)
+mailto:narucivanje.vinogradska@kbcsm.hr?subject=Appointment&body=Hello
+mailto:narucivanje.ilica@kbcsm.hr?subject=Appointment&body=Hello
+mailto:narucivanje.draskoviceva@kbcsm.hr?subject=Appointment&body=Hello
+tel:+38513787593
+http://www.kbcsm.hr
+https://www.kbcsm.hr/za-pacijente/centralno-narucivanje-pacijenata/
