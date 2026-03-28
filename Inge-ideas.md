@@ -94,7 +94,7 @@ Rješenje
 Tool koji kaže:
 👉 gdje postaviti reklamu za max exposure
 
-Kako radi 1
+Kako radi 2
 
 Kombinira:
 
