@@ -59,7 +59,7 @@ tags: #Human
     - No large functions, break into smaller ones.
 - You are done when tests are greeen and all is ready for human review.
 
-## DONE: Iteration 2
+# DONE: Iteration 2
 - Something is wrong with `test*.log` files, tests Pass but all log files are empty. Fix.
 - No need for JSON to be nested, flatten `contacts`.
 - Fields in JSON and CSV should be formatted in machine-friendly way:
@@ -73,7 +73,7 @@ tags: #Human
   - Create new `test4-biopsija-zg.expected.txt` and its `.sh` file, check it is red.
   - Implement this iteration, done when all tests are green.
 
-  # TODO:Iteration 3
+# DONE: Iteration 3
   - App doesn't display error when invalid codes are provided, e.g. `cekless.py 720 110` just prints table header, while https://liste.cezih.hr/PrviTermin?pId=720&regId=110 prints 'Neispravna šifra regije!'. #TDD: Add that case to test 5, red, fix, till green.
   - Make `cekless-interactive.py` (that uses `cekless.py` as a lib):
     - Also standalone py3 with `uv run` shebang.
@@ -84,4 +84,20 @@ tags: #Human
       - Scrape and decypher https://liste.cezih.hr/ page to find all options and indices.
     - When both are entered, use funcs from `cekless.py` to get a list, display as csv.
     - #TDD: Test interactive in test 6, red, fix, till green.
+
+# TODO: Iteration 4
+- Labels "3. termin -" are not very useful and are not machine-readable. 
+  Rename that field to 'SlotID` and make it numeric 1-based. 
+  #TDD: Change affected tests, red, implement in CSV, JSON, *.py, tests green.
+- In interactive, after displaying a list of slots, input a SlotID number.
+  - Then display just that slot nicely formatted as a text "card".
+  - Format that in card with prefixes for content types, so terminal highlight them as link.
+    E.g.: 
+    - mailto:recipient@example.com?subject=Appointment&body=Hello
+    - tel:+38535201150
+    - https://www.bolnicasb.hr (you can get web page from email domain.)
+  - After displaying a card, exit interactive.
+  - #TDD: Change affected tests, red, implement in *.py, tests green.
 - If you have problems with any of that, append a note to `journal.md` and report in final summary for #HITL.
+
+  

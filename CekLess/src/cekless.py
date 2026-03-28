@@ -106,6 +106,8 @@ def main():
     html = fetch_page(pid, rid)
     soup = BeautifulSoup(html, "html.parser")
     slots = parse_slots(soup)
+    if not slots:
+        error("No results found. Verify procedure and region codes.")
     save_data(slots, pid, rid)
     write_csv(slots, sys.stdout)
 
