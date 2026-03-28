@@ -21,7 +21,7 @@ tags: #Human
         - Don't use permanent venv, instead have self-contained py with `/// script` for dependencies.
         - `__main__` check.
 
-# Current iteration
+# DONE: Iteration 1
 - In accordance with #TextRL, currently implement as mock TUI
 - #ScrapeFT — We are getting data via HTML scraping (or internal API endpoint):
     - Fetch `https://liste.cezih.hr//PrviTermin?pId=<PID>&regId=<RID>` pages and cache them in `src/cached/` dir (e.g. as `pt-PID-RID.html`).
@@ -58,3 +58,17 @@ tags: #Human
     Use normal variable names like path and dir, not p and d. They are both 1 LTOK.  
     - No large functions, break into smaller ones.
 - You are done when tests are greeen and all is ready for human review.
+
+## TODO: Iteration 2
+- Something is wrong with `test*.log` files, tests Pass but all log files are empty. Fix.
+- No need for JSON to be nested, flatten `contacts`.
+- Fields in JSON and CSV should be formatted in machine-friendly way:
+  - "datetime": ISO datetime (e.g. `2026-03-30-14-05`)
+  - "wait": rename to "waitDays" and make numeric.
+  - "Telefon"/"Telefaks": remove spaces (e.g. `+38535201150`)
+- If no errors format the CLI output as CSV. 
+- `cekless.py` is too complex, reduce 1005 LTOK to <800 LTOK.
+- #TDD
+  - Update test3 to new CSV output with machine-friendly data formats, check it is red.
+  - Create new `test4-biopsija-zg.expected.txt` and its `.sh` file, check it is red.
+  - Implement this iteration, done when all tests are green.

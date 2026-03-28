@@ -14,3 +14,12 @@ fail() {
 }
 
 trap fail ERR
+
+assert_output() {
+  if diff <(printf '%s\n' "$1") "tests/$2" > "$LOG" 2>&1; then
+    echo "Pass"
+  else
+    echo "FAIL: output differs from tests/$2 (see $LOG)"
+    exit 1
+  fi
+}

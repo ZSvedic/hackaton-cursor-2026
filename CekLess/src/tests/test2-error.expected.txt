@@ -1,0 +1,2 @@
+ERROR: PID and RID must be numeric.
+USAGE: cekless <PID> <RID>
