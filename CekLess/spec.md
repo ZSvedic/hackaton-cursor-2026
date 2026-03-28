@@ -106,7 +106,11 @@ tags: #Human
   - Generate `webUrl` from email, but ping to check what the prefix is `[http:|https:]//[www.|]`.
   - Visit `webUrl` and extract (if found):
     - `address` — main address of the hospital.  
-    - `bookingUrl` — link to form for the appointment (HR: "forma/obrazac za narucivanje"). 
+    - `bookingUrl` — link to form for the appointment (HR keywords:
+      - Online naručivanje putem web obrasca.
+      - Naručite se
+      - Online naručivanje
+      - Centralno naručivanje.
       If none found, `bookingUrl` is empty ``.
   - Generate `mapsUrl` by appending encoded `address` to `https://www.google.com/maps/place/` or by Googling for hospital name.
   E.g. `https://www.google.com/maps/place/ul+andrije+stampara+35+slavonski+brod` gives location of Brod Hosiptal.
