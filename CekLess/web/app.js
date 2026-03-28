@@ -42,7 +42,7 @@ const app = {
       return false;
     }
     this.showStatus("Searching...");
-    this.hide("card");
+    this.closeCard();
     try {
       const res = await fetch(`/api/search?pid=${pid}&rid=${rid}`);
       const data = await res.json();
@@ -59,11 +59,11 @@ const app = {
 
   renderTable(slots) {
     const cols = ["SlotID", "datetime", "waitDays", "hospital"];
-    let html = '<table class="pure-table pure-table-striped"><thead><tr>';
+    let html = '<table><thead><tr>';
     html += cols.map(c => `<th>${c}</th>`).join("");
     html += "</tr></thead><tbody>";
     for (const s of slots) {
-      html += `<tr onclick="app.showCard(${s.SlotID})">`;
+      html += `<tr data-slot="${s.SlotID}" onclick="app.showCard(${s.SlotID})">`;
       html += cols.map(c => `<td>${s[c]}</td>`).join("");
       html += "</tr>";
     }
@@ -76,6 +76,11 @@ const app = {
   async showCard(slotId) {
     const slot = this.slots.find(s => s.SlotID === slotId);
     if (!slot) return;
+
+    document.querySelectorAll("#results tr.selected").forEach(r => r.classList.remove("selected"));
+    const row = document.querySelector(`#results tr[data-slot="${slotId}"]`);
+    if (row) row.classList.add("selected");
+
     let hospital = {};
     try {
       hospital = await fetch(`/api/hospital?email=${encodeURIComponent(slot.email)}`).then(r => r.json());
@@ -86,31 +91,44 @@ const app = {
     const domain = emails[0].split("@")[1] || "";
     const web = webUrl || (domain ? `https://${domain}` : "");
 
-    let html = `<div class="card"><h3>Slot ${slot.SlotID} — ${slot.datetime}</h3>`;
-    html += `<p><strong>${slot.hospital}</strong><br>${slot.waitDays} days wait</p>`;
-    html += `<div class="field-label">Email</div>`;
+    let html = `<div class="card-header">
+      <h3>Slot ${slot.SlotID} — ${slot.datetime}</h3>
+      <p>${slot.hospital} &middot; ${slot.waitDays} days wait</p>
+    </div><div class="card-inner"><div class="card-grid">`;
+
+    html += `<div class="card-label">Email</div><div class="card-value">`;
     for (const email of emails) {
       html += `<a href="mailto:${email}?subject=Appointment&body=Hello">${email}</a>`;
     }
-    html += `<div class="field-label">Phone</div>`;
+    html += `</div>`;
+
+    html += `<div class="card-label">Phone</div><div class="card-value">`;
     html += `<a href="tel:${slot.telefon}">${slot.telefon}</a>`;
-    if (slot.telefaks) html += `<span> Fax: ${slot.telefaks}</span>`;
+    if (slot.telefaks) html += `<br>Fax: ${slot.telefaks}`;
+    html += `</div>`;
+
     if (web) {
-      html += `<div class="field-label">Website</div><a href="${web}" target="_blank">${web}</a>`;
+      html += `<div class="card-label">Website</div><div class="card-value"><a href="${web}" target="_blank">${web}</a></div>`;
     }
     if (hospital.address) {
-      html += `<div class="field-label">Address</div><span>${hospital.address}</span>`;
+      html += `<div class="card-label">Address</div><div class="card-value">${hospital.address}</div>`;
     }
     if (hospital.bookingUrl) {
-      html += `<div class="field-label">Online Booking</div><a href="${hospital.bookingUrl}" target="_blank">${hospital.bookingUrl}</a>`;
+      html += `<div class="card-label">Booking</div><div class="card-value"><a href="${hospital.bookingUrl}" target="_blank">Book online</a></div>`;
     }
     if (hospital.mapsUrl) {
-      html += `<div class="field-label">Map</div><a href="${hospital.mapsUrl}" target="_blank">View on Google Maps</a>`;
+      html += `<div class="card-label">Map</div><div class="card-value"><a href="${hospital.mapsUrl}" target="_blank">View on Google Maps</a></div>`;
     }
-    html += "</div>";
-    const el = document.getElementById("card");
-    el.innerHTML = html;
-    el.classList.remove("hidden");
+
+    html += "</div></div>";
+
+    document.getElementById("card-content").innerHTML = html;
+    document.getElementById("card-panel").classList.add("open");
+  },
+
+  closeCard() {
+    document.getElementById("card-panel").classList.remove("open");
+    document.querySelectorAll("#results tr.selected").forEach(r => r.classList.remove("selected"));
   },
 
   showStatus(msg) {

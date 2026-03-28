@@ -6,43 +6,116 @@
   <title>CekLess — Find Appointments</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <style>
-    body { max-width: 960px; margin: 0 auto; padding: 1rem; font-family: system-ui, sans-serif; }
-    h1 { color: #2d3e50; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ffffff 0%, #e8f4f8 100%);
+      font-family: system-ui, -apple-system, sans-serif;
+      color: #2d3e50;
+      padding: 0;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; position: relative; }
+
+    .header { display: flex; align-items: center; gap: 1rem; margin-bottom: .5rem; }
+    .header img { height: 64px; }
+    .header h1 { margin: 0; font-size: 2rem; color: #1a6b8a; }
+    .subtitle { color: #5a7a8a; margin: 0 0 1.5rem 0; font-size: 1rem; }
+
     .search-form { margin-bottom: 1.5rem; }
-    .search-form select, .search-form input { margin-right: .5rem; }
-    #status { margin: 1rem 0; color: #555; }
+    .search-form label { font-weight: 600; color: #1a6b8a; }
+    .search-form input[type="text"] {
+      border: 2px solid #b8d8e8; border-radius: 4px; padding: .4rem .6rem;
+      margin-right: .5rem; transition: border-color .2s;
+    }
+    .search-form input[type="text"]:focus { border-color: #1a6b8a; outline: none; }
+    .search-btn {
+      background: #1a6b8a; color: #fff; border: none; border-radius: 4px;
+      padding: .5rem 1.2rem; font-weight: 600; cursor: pointer; transition: background .2s;
+    }
+    .search-btn:hover { background: #145a74; }
+
+    #status { margin: 1rem 0; color: #5a7a8a; font-weight: 500; }
+
     #results { margin-top: 1rem; }
-    #results table { width: 100%; }
-    #results tr { cursor: pointer; }
-    #results tr:hover { background: #eef; }
-    .card { background: #f7f7f7; border: 1px solid #ddd; border-radius: 8px; padding: 1.2rem; margin-top: 1rem; max-width: 600px; }
-    .card h3 { margin-top: 0; }
-    .card a { display: block; margin: .3rem 0; }
-    .card .field-label { font-weight: bold; font-size: .85rem; color: #666; margin-top: .6rem; }
+    #results table { width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; }
+    #results thead th {
+      background: #1a6b8a; color: #fff; padding: .7rem .8rem;
+      text-align: left; font-size: .9rem; text-transform: uppercase; letter-spacing: .03em;
+    }
+    #results tbody tr { cursor: pointer; transition: background .15s; }
+    #results tbody tr:nth-child(even) { background: rgba(26, 107, 138, .06); }
+    #results tbody tr:hover { background: rgba(26, 107, 138, .15); }
+    #results tbody tr.selected { background: rgba(26, 107, 138, .22); }
+    #results tbody td { padding: .55rem .8rem; border-bottom: 1px solid #dde8ee; }
+
+    .card-overlay {
+      position: fixed; top: 0; right: 0; width: 420px; max-width: 90vw; height: 100vh;
+      background: #fff; box-shadow: -4px 0 24px rgba(0,0,0,.15);
+      transform: translateX(100%); transition: transform .35s cubic-bezier(.4,0,.2,1);
+      z-index: 100; overflow-y: auto;
+    }
+    .card-overlay.open { transform: translateX(0); }
+    .card-overlay .card-inner { padding: 1.5rem; }
+
+    .card-close {
+      position: absolute; top: .8rem; right: 1rem; background: none; border: none;
+      font-size: 1.5rem; cursor: pointer; color: #888; transition: color .15s;
+    }
+    .card-close:hover { color: #333; }
+
+    .card-header {
+      background: linear-gradient(135deg, #1a6b8a, #2da89e);
+      color: #fff; padding: 1.2rem 1.5rem; border-radius: 0;
+    }
+    .card-header h3 { margin: 0 0 .3rem 0; font-size: 1.2rem; }
+    .card-header p { margin: 0; opacity: .9; font-size: .95rem; }
+
+    .card-grid {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: .1rem 1rem; padding: 1rem 0; align-items: baseline;
+    }
+    .card-label {
+      font-size: .8rem; font-weight: 700; color: #1a6b8a; text-transform: uppercase;
+      letter-spacing: .04em; padding: .45rem 0; white-space: nowrap;
+    }
+    .card-value { padding: .45rem 0; word-break: break-word; }
+    .card-value a { color: #1a6b8a; text-decoration: none; }
+    .card-value a:hover { text-decoration: underline; }
+
     .hidden { display: none; }
   </style>
 </head>
 <body>
-  <h1>CekLess</h1>
-  <p>Find available medical appointments in Croatia.</p>
+  <div class="container">
+    <div class="header">
+      <img src="CekLess-logo.png" alt="CekLess logo">
+      <h1>CekLess</h1>
+    </div>
+    <p class="subtitle">Find available medical appointments in Croatia.</p>
 
-  <form class="search-form pure-form" onsubmit="return app.search(event)">
-    <label for="proc">Procedure:</label>
-    <input id="proc-search" type="text" list="proc-list" placeholder="Type to filter..." autocomplete="off">
-    <datalist id="proc-list"></datalist>
-    <input id="proc" type="hidden">
+    <form class="search-form pure-form" onsubmit="return app.search(event)">
+      <label for="proc">Procedure:</label>
+      <input id="proc-search" type="text" list="proc-list" placeholder="Type to filter..." autocomplete="off">
+      <datalist id="proc-list"></datalist>
+      <input id="proc" type="hidden">
 
-    <label for="reg">Region:</label>
-    <input id="reg-search" type="text" list="reg-list" placeholder="Type to filter..." autocomplete="off">
-    <datalist id="reg-list"></datalist>
-    <input id="reg" type="hidden">
+      <label for="reg">Region:</label>
+      <input id="reg-search" type="text" list="reg-list" placeholder="Type to filter..." autocomplete="off">
+      <datalist id="reg-list"></datalist>
+      <input id="reg" type="hidden">
 
-    <button type="submit" class="pure-button pure-button-primary">Search</button>
-  </form>
+      <button type="submit" class="search-btn">Search</button>
+    </form>
 
-  <div id="status" class="hidden"></div>
-  <div id="results" class="hidden"></div>
-  <div id="card" class="hidden"></div>
+    <div id="status" class="hidden"></div>
+    <div id="results" class="hidden"></div>
+  </div>
+
+  <div id="card-panel" class="card-overlay">
+    <button class="card-close" onclick="app.closeCard()">&times;</button>
+    <div id="card-content"></div>
+  </div>
 
   <script src="app.js"></script>
 </body>
