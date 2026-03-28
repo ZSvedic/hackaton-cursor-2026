@@ -129,8 +129,17 @@ tags: #Human
   - Human will review your plan, keep it short, <500 LTOK for `web-spec.md`.
   - Don't implement that web plan, just create it.
 
-  # TODO: Iteration 6
-  - There is a bug when hospital has mutiple emails:
-  `mailto:narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr?subject=A`
-    - Fix it by creating mailto: entries for each email. #TDD
-  - Implement [./web/web-spec-iter-6.md](./web/web-spec-iter-6.md), shout in ALL CAPS if you can't find it.
+# DONE: Iteration 6
+- There is a bug when hospital has mutiple emails:
+`mailto:narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr?subject=A`
+  - Fix it by creating mailto: entries for each email. #TDD
+- Implement [./web/web-spec-iter-6.md](./web/web-spec-iter-6.md), shout in ALL CAPS if you can't find it.
+
+# TODO: Iteration 7
+- Current web app works but could use improvement in design/UX.
+- Add logo in `web/CekLess-logo.png` to homepage.
+- Add very light background CSS fade from white top and to light blue at bottom. Make it light because test stays black and logo doesn't have transparency.
+- Add colors to the table, (e.g. gren or blue like in the logo)
+- When row is selected, don't display card below but animate sliding card from the right.
+- Add colors to the card, make labels left hidden column and texts right hidden column.
+- Make the best thing you can before 16:52, we need to submit.

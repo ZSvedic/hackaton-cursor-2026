@@ -1,0 +1,47 @@
+[
+  {
+    "datetime": "2026-04-17-14-00",
+    "waitDays": 20,
+    "hospital": "OB Slavonski Brod",
+    "email": "narpac@bolnicasb.hr",
+    "telefon": "+38535201150",
+    "telefaks": "+38535201156",
+    "SlotID": 1
+  },
+  {
+    "datetime": "2026-04-17-14-30",
+    "waitDays": 20,
+    "hospital": "OB Slavonski Brod",
+    "email": "narpac@bolnicasb.hr",
+    "telefon": "+38535201150",
+    "telefaks": "+38535201156",
+    "SlotID": 2
+  },
+  {
+    "datetime": "2026-04-17-15-00",
+    "waitDays": 20,
+    "hospital": "OB Slavonski Brod",
+    "email": "narpac@bolnicasb.hr",
+    "telefon": "+38535201150",
+    "telefaks": "+38535201156",
+    "SlotID": 3
+  },
+  {
+    "datetime": "2026-04-21-14-30",
+    "waitDays": 24,
+    "hospital": "OB Slavonski Brod",
+    "email": "narpac@bolnicasb.hr",
+    "telefon": "+38535201150",
+    "telefaks": "+38535201156",
+    "SlotID": 4
+  },
+  {
+    "datetime": "2026-04-21-15-00",
+    "waitDays": 24,
+    "hospital": "OB Slavonski Brod",
+    "email": "narpac@bolnicasb.hr",
+    "telefon": "+38535201150",
+    "telefaks": "+38535201156",
+    "SlotID": 5
+  }
+]
