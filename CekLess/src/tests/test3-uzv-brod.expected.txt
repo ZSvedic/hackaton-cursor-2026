@@ -1,7 +1,2 @@
-1147 - UZV dojke / Brodsko-posavska županija
-
-1. termin - 17.04.2026. 14:00 Broj dana čekanja: 20
-OB Slavonski Brod
-E-mail: narpac@bolnicasb.hr
-Telefon: +385 35 201 150
-Telefaks: +385 35 201 156
+label,datetime,waitDays,hospital,email,telefon,telefaks
+1. termin -,2026-04-17-14-00,20,OB Slavonski Brod,narpac@bolnicasb.hr,+38535201150,+38535201156

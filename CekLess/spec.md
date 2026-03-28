@@ -59,7 +59,7 @@ tags: #Human
     - No large functions, break into smaller ones.
 - You are done when tests are greeen and all is ready for human review.
 
-## TODO: Iteration 2
+## DONE: Iteration 2
 - Something is wrong with `test*.log` files, tests Pass but all log files are empty. Fix.
 - No need for JSON to be nested, flatten `contacts`.
 - Fields in JSON and CSV should be formatted in machine-friendly way:
@@ -72,3 +72,16 @@ tags: #Human
   - Update test3 to new CSV output with machine-friendly data formats, check it is red.
   - Create new `test4-biopsija-zg.expected.txt` and its `.sh` file, check it is red.
   - Implement this iteration, done when all tests are green.
+
+  # TODO:Iteration 3
+  - App doesn't display error when invalid codes are provided, e.g. `cekless.py 720 110` just prints table header, while https://liste.cezih.hr/PrviTermin?pId=720&regId=110 prints 'Neispravna šifra regije!'. #TDD: Add that case to test 5, red, fix, till green.
+  - Make `cekless-interactive.py` (that uses `cekless.py` as a lib):
+    - Also standalone py3 with `uv run` shebang.
+    - Can work in interactive mode but also as when keyboard is "piped" into it, that is needed for testing.
+    - First ask for procedure, then for region. 
+    - Make search work when typing a few chars and hitting tab.
+    - Make a separate `procedures.csv` and `regions.csv` contain indices of all procedures and regions.
+      - Scrape and decypher https://liste.cezih.hr/ page to find all options and indices.
+    - When both are entered, use funcs from `cekless.py` to get a list, display as csv.
+    - #TDD: Test interactive in test 6, red, fix, till green.
+- If you have problems with any of that, append a note to `journal.md` and report in final summary for #HITL.
