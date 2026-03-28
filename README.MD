@@ -5,7 +5,11 @@
 
 ---
 
+
 ## Overview
+
+[DOWNLOAD CekLess-demo-1.mov](CekLess-demo-1.mov)
+
 ČekLess is an intuitive tool designed to simplify healthcare appointment scheduling in Zagreb, tackling the long waiting lists and complexity of the current system (CEZIH – Central Health Information System of Croatia).  
 
 ---
