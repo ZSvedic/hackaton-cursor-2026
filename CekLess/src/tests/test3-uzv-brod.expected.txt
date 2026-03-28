@@ -1,2 +1,2 @@
-label,datetime,waitDays,hospital,email,telefon,telefaks
-1. termin -,2026-04-17-14-00,20,OB Slavonski Brod,narpac@bolnicasb.hr,+38535201150,+38535201156
+SlotID,datetime,waitDays,hospital,email,telefon,telefaks
+1,2026-04-17-14-00,20,OB Slavonski Brod,narpac@bolnicasb.hr,+38535201150,+38535201156

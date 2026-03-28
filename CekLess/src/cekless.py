@@ -16,7 +16,7 @@ BASE_URL = "https://liste.cezih.hr/PrviTermin"
 SCRIPT_DIR = Path(__file__).parent
 CACHE_DIR = SCRIPT_DIR / "cached"
 CACHE_MAX_AGE = timedelta(hours=2)
-CSV_FIELDS = ["label", "datetime", "waitDays", "hospital", "email", "telefon", "telefaks"]
+CSV_FIELDS = ["SlotID", "datetime", "waitDays", "hospital", "email", "telefon", "telefaks"]
 
 
 def usage():
@@ -58,7 +58,6 @@ def parse_slots(soup):
     slots = []
     for div in soup.select(".slotHeaderPT"):
         spans = div.find_all("span", recursive=False)
-        label = spans[0].get_text(strip=True) if spans else ""
         date_text = spans[1].get_text(strip=True) if len(spans) > 1 else ""
         wait_text = spans[2].get_text(strip=True) if len(spans) > 2 else ""
         hospital_el = div.select_one(".infoHeader")
@@ -69,7 +68,6 @@ def parse_slots(soup):
             if name_el and value_el:
                 contacts[name_el.get_text(strip=True)] = value_el.get_text(strip=True)
         slots.append({
-            "label": label,
             "datetime": parse_datetime(date_text),
             "waitDays": parse_wait_days(wait_text),
             "hospital": hospital_el.get_text(strip=True) if hospital_el else "",
@@ -77,7 +75,10 @@ def parse_slots(soup):
             "telefon": contacts.get("Telefon", "").replace(" ", ""),
             "telefaks": contacts.get("Telefaks", "").replace(" ", ""),
         })
-    return sorted(slots, key=lambda slot: slot["datetime"])
+    slots.sort(key=lambda slot: slot["datetime"])
+    for idx, slot in enumerate(slots, 1):
+        slot["SlotID"] = idx
+    return slots
 
 
 def write_csv(slots, file):

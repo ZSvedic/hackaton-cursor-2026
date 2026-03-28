@@ -1,0 +1,47 @@
+[
+  {
+    "datetime": "2026-05-28-13-20",
+    "waitDays": 61,
+    "hospital": "OB Bjelovar",
+    "email": "narucivanje@obbj.hr",
+    "telefon": "+38543279171",
+    "telefaks": "+38543279101",
+    "SlotID": 1
+  },
+  {
+    "datetime": "2026-05-28-13-30",
+    "waitDays": 61,
+    "hospital": "OB Bjelovar",
+    "email": "narucivanje@obbj.hr",
+    "telefon": "+38543279171",
+    "telefaks": "+38543279101",
+    "SlotID": 2
+  },
+  {
+    "datetime": "2026-05-28-13-40",
+    "waitDays": 61,
+    "hospital": "OB Bjelovar",
+    "email": "narucivanje@obbj.hr",
+    "telefon": "+38543279171",
+    "telefaks": "+38543279101",
+    "SlotID": 3
+  },
+  {
+    "datetime": "2026-05-28-13-50",
+    "waitDays": 61,
+    "hospital": "OB Bjelovar",
+    "email": "narucivanje@obbj.hr",
+    "telefon": "+38543279171",
+    "telefaks": "+38543279101",
+    "SlotID": 4
+  },
+  {
+    "datetime": "2026-06-18-12-00",
+    "waitDays": 82,
+    "hospital": "OB Bjelovar",
+    "email": "narucivanje@obbj.hr",
+    "telefon": "+38543279171",
+    "telefaks": "+38543279101",
+    "SlotID": 5
+  }
+]

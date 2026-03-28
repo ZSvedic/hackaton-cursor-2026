@@ -1,119 +1,119 @@
 [
   {
-    "label": "1. termin -",
     "datetime": "2026-03-30-08-00",
     "waitDays": 2,
     "hospital": "KBC Zagreb",
     "email": "bojcen@kbc-zagreb.hr",
     "telefon": "+38512367720",
-    "telefaks": "+38514920216"
+    "telefaks": "+38514920216",
+    "SlotID": 1
   },
   {
-    "label": "2. termin -",
     "datetime": "2026-03-30-08-20",
     "waitDays": 2,
     "hospital": "KBC Zagreb",
     "email": "bojcen@kbc-zagreb.hr",
     "telefon": "+38512367720",
-    "telefaks": "+38514920216"
+    "telefaks": "+38514920216",
+    "SlotID": 2
   },
   {
-    "label": "3. termin -",
     "datetime": "2026-03-30-08-40",
     "waitDays": 2,
     "hospital": "KBC Zagreb",
     "email": "bojcen@kbc-zagreb.hr",
     "telefon": "+38512367720",
-    "telefaks": "+38514920216"
+    "telefaks": "+38514920216",
+    "SlotID": 3
   },
   {
-    "label": "4. termin -",
     "datetime": "2026-04-01-11-20",
     "waitDays": 4,
     "hospital": "KBC Sestre milosrdnice (KBC SM VINOGRADSKA)",
     "email": "narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",
     "telefon": "+38513787593",
-    "telefaks": "+38513787792"
+    "telefaks": "+38513787792",
+    "SlotID": 4
   },
   {
-    "label": "5. termin -",
     "datetime": "2026-04-01-11-30",
     "waitDays": 4,
     "hospital": "KBC Sestre milosrdnice (KBC SM VINOGRADSKA)",
     "email": "narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",
     "telefon": "+38513787593",
-    "telefaks": "+38513787792"
+    "telefaks": "+38513787792",
+    "SlotID": 5
   },
   {
-    "label": "6. termin -",
     "datetime": "2026-04-01-11-40",
     "waitDays": 4,
     "hospital": "KBC Sestre milosrdnice (KBC SM VINOGRADSKA)",
     "email": "narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",
     "telefon": "+38513787593",
-    "telefaks": "+38513787792"
+    "telefaks": "+38513787792",
+    "SlotID": 6
   },
   {
-    "label": "7. termin -",
     "datetime": "2026-07-17-11-20",
     "waitDays": 111,
     "hospital": "Klinika za dječje bolesti Zagreb",
     "email": "kdb.narudzbe@kdb.hr",
     "telefon": "+38514600156",
-    "telefaks": "+38514600161"
+    "telefaks": "+38514600161",
+    "SlotID": 7
   },
   {
-    "label": "8. termin -",
     "datetime": "2026-07-17-11-40",
     "waitDays": 111,
     "hospital": "Klinika za dječje bolesti Zagreb",
     "email": "kdb.narudzbe@kdb.hr",
     "telefon": "+38514600156",
-    "telefaks": "+38514600161"
+    "telefaks": "+38514600161",
+    "SlotID": 8
   },
   {
-    "label": "9. termin -",
     "datetime": "2026-07-17-12-00",
     "waitDays": 111,
     "hospital": "Klinika za dječje bolesti Zagreb",
     "email": "kdb.narudzbe@kdb.hr",
     "telefon": "+38514600156",
-    "telefaks": "+38514600161"
+    "telefaks": "+38514600161",
+    "SlotID": 9
   },
   {
-    "label": "10. termin -",
     "datetime": "2026-07-17-12-20",
     "waitDays": 111,
     "hospital": "Klinika za dječje bolesti Zagreb",
     "email": "kdb.narudzbe@kdb.hr",
     "telefon": "+38514600156",
-    "telefaks": "+38514600161"
+    "telefaks": "+38514600161",
+    "SlotID": 10
   },
   {
-    "label": "11. termin -",
     "datetime": "2026-07-20-10-40",
     "waitDays": 114,
     "hospital": "Klinika za dječje bolesti Zagreb",
     "email": "kdb.narudzbe@kdb.hr",
     "telefon": "+38514600156",
-    "telefaks": "+38514600161"
+    "telefaks": "+38514600161",
+    "SlotID": 11
   },
   {
-    "label": "12. termin -",
     "datetime": "2026-08-19-11-20",
     "waitDays": 144,
     "hospital": "KBC Sestre milosrdnice (KBC SM VINOGRADSKA)",
     "email": "narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",
     "telefon": "+38513787593",
-    "telefaks": "+38513787792"
+    "telefaks": "+38513787792",
+    "SlotID": 12
   },
   {
-    "label": "13. termin -",
     "datetime": "2026-08-27-11-50",
     "waitDays": 152,
     "hospital": "KBC Sestre milosrdnice (KBC SM VINOGRADSKA)",
     "email": "narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",
     "telefon": "+38513787593",
-    "telefaks": "+38513787792"
+    "telefaks": "+38513787792",
+    "SlotID": 13
   }
 ]

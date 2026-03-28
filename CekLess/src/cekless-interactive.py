@@ -58,6 +58,36 @@ def prompt_select(prompt_text, items, label):
     return match
 
 
+def website_from_email(email):
+    first = email.split(",")[0].strip()
+    domain = first.split("@")[-1] if "@" in first else ""
+    return f"https://{domain}" if domain else ""
+
+
+def format_card(slot):
+    lines = [
+        f"Slot {slot['SlotID']} — {slot['datetime']} ({slot['waitDays']} days wait)",
+        slot["hospital"],
+        f"mailto:{slot['email']}?subject=Appointment&body=Hello",
+        f"tel:{slot['telefon']}",
+        website_from_email(slot["email"]),
+    ]
+    return "\n".join(lines)
+
+
+def prompt_slot(slots):
+    sys.stderr.write("SlotID: ")
+    sys.stderr.flush()
+    try:
+        text = input()
+    except EOFError:
+        return None
+    if not text.strip().isdigit():
+        return None
+    slot_id = int(text.strip())
+    return next((s for s in slots if s["SlotID"] == slot_id), None)
+
+
 def main():
     import cekless
 
@@ -76,6 +106,11 @@ def main():
         sys.exit(1)
     cekless.save_data(slots, pid, rid)
     cekless.write_csv(slots, sys.stdout)
+
+    selected = prompt_slot(slots)
+    if selected:
+        print()
+        print(format_card(selected))
 
 
 if __name__ == "__main__":

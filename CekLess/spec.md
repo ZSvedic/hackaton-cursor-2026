@@ -85,7 +85,7 @@ tags: #Human
     - When both are entered, use funcs from `cekless.py` to get a list, display as csv.
     - #TDD: Test interactive in test 6, red, fix, till green.
 
-# TODO: Iteration 4
+# DONE: Iteration 4
 - Labels "3. termin -" are not very useful and are not machine-readable. 
   Rename that field to 'SlotID` and make it numeric 1-based. 
   #TDD: Change affected tests, red, implement in CSV, JSON, *.py, tests green.
@@ -100,4 +100,27 @@ tags: #Human
   - #TDD: Change affected tests, red, implement in *.py, tests green.
 - If you have problems with any of that, append a note to `journal.md` and report in final summary for #HITL.
 
-  
+# TODO: Iteration 5
+- Create `download-hospitals.py` that creates:
+  - `hospitals.csv` and with fields `email,name,email,telefon,telefaks,address,webUrl,bookingUrl,mapsUrl`.  
+  - Generate `webUrl` from email, but ping to check what the prefix is `[http:|https:]//[www.|]`.
+  - Visit `webUrl` and extract (if found):
+    - `address` — main address of the hospital.  
+    - `bookingUrl` — link to form for the appointment (HR: "forma/obrazac za narucivanje"). 
+      If none found, `bookingUrl` is empty ``.
+  - Generate `mapsUrl` by appending encoded `address` to `https://www.google.com/maps/place/` or by Googling for hospital name.
+  E.g. `https://www.google.com/maps/place/ul+andrije+stampara+35+slavonski+brod` gives location of Brod Hosiptal.
+  - Online calls should be batched in py or via bash (e.g. ping/curl) to run in paralel, with timeout per web query of 30 sec, so entire `download-hospitals.py` finishes within 60 sec.
+  - #TDD: create test7, check just header and that are 30+ rows, check red, implement, then green.   
+- Expand card with info from `hospitals.csv`: address, webUrl, bookingUrl, mapsUrl
+  - #TDD: udpate affected interactive test, check red, implement, then green.
+- Make a plan `web/web-spec.md` for #HITL, in a style of this document which was for lib and CLI interactive. Recommend the simplest:
+  - Web tech stack (py, js, or ts) with the minimum number of files (no npm/node.js hell)
+  - Max 5 dependencies.
+  - Can be unstyled or use semantic html css template.
+  - localhost first
+  - If needed, some web testing tool/lib. There must be a way to test that web app.
+  - Plan of implementation and testing, with estimated max LTOK for each code file and test.
+  - Inside `web-spec.md` you can link to cli interactive and lib .py files, to reuse code.
+  - Human will review your plan, keep it short, <500 LTOK for `web-spec.md`.
+  - Don't implement that plan, just create it.
