@@ -110,3 +110,118 @@ segmentacija:
 sportaši
 commuteri
 turisti
+
+### CHAT GPT prijedlog 3
+“HydroBike Zagreb”
+👉 App za bicikliste i rekreativce koji optimizira rutu po:
+dostupnosti vode 💧
+kvaliteti vožnje 🚴
+kontinuitetu staza
+🎯 Problem (jasan i stvaran)
+
+U Zagrebu:
+
+ne znaš gdje možeš napuniti vodu
+ne znaš gdje su stvarno povezane bike staze
+često završiš:
+na lošoj cesti
+bez vode
+u prekidu rute
+
+👉 posebno problem za:
+
+rekreativce
+trkače
+turiste
+e-bike korisnike
+✅ Rješenje (jednostavno i fokusirano)
+
+Mapa + routing koji daje:
+
+1) “Hydration-aware route”
+
+👉 ruta koja:
+
+prolazi kroz pojilice svakih X km
+izbjegava “suhe zone”
+2) “Bike continuity score”
+
+👉 koliko je ruta zapravo:
+
+na pravim biciklističkim stazama
+bez prekida / silaska na cestu
+3) “Refill network”
+
+👉 vizualizacija:
+
+dostupnosti vode u gradu
+coverage mapa (gdje si “sigurna”)
+🔥 Zašto je ovo dobro (hackathon-wise)
+fokusirano → možeš napraviti poliran demo
+jasno → odmah razumljivo
+vizualno → heatmap + ruta = efektno
+nema direktne konkurencije (Google to NE radi)
+⚙️ Kako implementirati (realno u 1–2 dana)
+1) Data model
+
+Spoji sve u jedan graph:
+
+nodes:
+bike stationi
+pojilice
+edges:
+biciklističke staze
+2) Routing logika (ključ)
+
+Modificirani Dijkstra:
+
+cost function:
+
+cost = distance 
+     + penalty_if_no_bike_lane
+     + penalty_if_no_water_nearby
+
+👉 ili čak:
+
+constraint:
+max 2 km bez pojilice
+3) Vizualizacija
+
+Koristi:
+
+Leaflet
+
+Layeri:
+
+staze (linije)
+pojilice (plave točke)
+bike stationi (zeleno)
+4) Killer feature (lagan za napraviti)
+“Dehydration risk”
+označi dijelove grada gdje:
+nema pojilice u radiusu npr. 1 km
+
+👉 to je brutalno vizualno
+
+🧠 Pitch (konkretno)
+
+“Zagreb ima odličnu infrastrukturu za bicikle, ali nema osnovnu stvar — informaciju gdje možeš doći do vode.
+Mi smo to pretvorili u routing engine koji ne optimizira samo kretanje, nego i preživljavanje ljeti.”
+
+💡 Bonus ideje (ako stigneš)
+“sport mode”:
+ruta koja prolazi kroz parkove
+“tourist mode”:
+lagana ruta + voda + atrakcije (možeš kasnije dodati)
+“bike station balancing”:
+gdje ima slobodnih bicikala (ako imaš podatke)
+🎯 Realna procjena
+
+Ovo možeš:
+
+napraviti brzo
+vizualno pokazati
+objasniti bez puno tehničkog konteksta
+
+👉 i najvažnije:
+nije generički projekt
