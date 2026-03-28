@@ -128,3 +128,9 @@ tags: #Human
   - Inside `web-spec.md` you can link to cli interactive and lib .py files, to reuse code.
   - Human will review your plan, keep it short, <500 LTOK for `web-spec.md`.
   - Don't implement that web plan, just create it.
+
+  # TODO: Iteration 6
+  - There is a bug when hospital has mutiple emails:
+  `mailto:narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr?subject=A`
+    - Fix it by creating mailto: entries for each email. #TDD
+  - Implement [./web/web-spec-iter-6.md](./web/web-spec-iter-6.md), shout in ALL CAPS if you can't find it.

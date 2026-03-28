@@ -7,6 +7,7 @@ tags: #Human
 ## Stack
 - Python 3 `http.server` (stdlib) — `server.py` serves API + static files.
 - Vanilla HTML/CSS/JS — `index.html` + `app.js`. No npm/build step.
+- Use https://pure-css.github.io/ for styling. 
 
 ## Dependencies
 1. `beautifulsoup4` — via `import cekless` (reuse CLI lib).
@@ -36,4 +37,9 @@ tags: #Human
 - Reads `hospitals.csv` for card enrichment (same as `cekless-interactive.py`).
 
 ## Test
-`test_web.sh`: start server background, curl `/` (200), `/api/procedures` (800+ items), `/api/search?pid=1147&rid=080` (slot data), `trap` kill on exit.
+- Tests in `web-tests/`.`
+- `test_web.sh`: 
+    - start server background, 
+    - curl `/` (200), `/api/procedures` (800+ items), 
+    - `/api/search?pid=1147&rid=080` (slot data), 
+    - `trap` kill on exit.
