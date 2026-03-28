@@ -36,3 +36,8 @@ OUTPUT 2 - Prefilling of the form
 - Online narudžba
 - Centralno naručivanje
 
+# List of the web templetes
+- IMA KARTU i formu za naručivanje - https://htmltemplates.co/free-website-templates/health-center-free-medical-html-website-template
+- Ima formu za naručivanje - https://themewagon.github.io/medicalcenter/
+
+
