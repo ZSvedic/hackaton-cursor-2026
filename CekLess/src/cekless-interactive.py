@@ -58,20 +58,33 @@ def prompt_select(prompt_text, items, label):
     return match
 
 
+def load_hospitals():
+    path = SCRIPT_DIR / "hospitals.csv"
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8") as file:
+        return {row["email"]: row for row in csv.DictReader(file)}
+
+
 def website_from_email(email):
     first = email.split(",")[0].strip()
     domain = first.split("@")[-1] if "@" in first else ""
     return f"https://{domain}" if domain else ""
 
 
-def format_card(slot):
+def format_card(slot, hospitals):
+    info = hospitals.get(slot["email"], {})
+    web_url = info.get("webUrl", "") or website_from_email(slot["email"])
     lines = [
         f"Slot {slot['SlotID']} — {slot['datetime']} ({slot['waitDays']} days wait)",
         slot["hospital"],
         f"mailto:{slot['email']}?subject=Appointment&body=Hello",
         f"tel:{slot['telefon']}",
-        website_from_email(slot["email"]),
+        web_url,
     ]
+    for field in ["address", "bookingUrl", "mapsUrl"]:
+        if info.get(field):
+            lines.append(info[field])
     return "\n".join(lines)
 
 
@@ -93,6 +106,7 @@ def main():
 
     procedures = load_options("procedures.csv")
     regions = load_options("regions.csv")
+    hospitals = load_hospitals()
 
     proc = prompt_select("Procedure: ", procedures, "procedure")
     reg = prompt_select("Region: ", regions, "region")
@@ -110,7 +124,7 @@ def main():
     selected = prompt_slot(slots)
     if selected:
         print()
-        print(format_card(selected))
+        print(format_card(selected, hospitals))
 
 
 if __name__ == "__main__":

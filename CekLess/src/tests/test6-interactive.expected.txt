@@ -17,4 +17,5 @@ Slot 1 — 2026-03-30-08-00 (2 days wait)
 KBC Zagreb
 mailto:bojcen@kbc-zagreb.hr?subject=Appointment&body=Hello
 tel:+38512367720
-https://kbc-zagreb.hr
+https://www.kbc-zagreb.hr
+https://www.kbc-zagreb.hr/#

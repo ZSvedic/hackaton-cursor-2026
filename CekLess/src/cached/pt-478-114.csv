@@ -1,0 +1,21 @@
+SlotID,datetime,waitDays,hospital,email,telefon,telefaks
+1,2026-04-21-14-00,24,Klinika za dječje bolesti Zagreb,kdb.narudzbe@kdb.hr,+38514600156,+38514600161
+2,2026-04-21-14-30,24,Klinika za dječje bolesti Zagreb,kdb.narudzbe@kdb.hr,+38514600156,+38514600161
+3,2026-04-21-15-00,24,Klinika za dječje bolesti Zagreb,kdb.narudzbe@kdb.hr,+38514600156,+38514600161
+4,2026-04-21-15-30,24,Klinika za dječje bolesti Zagreb,kdb.narudzbe@kdb.hr,+38514600156,+38514600161
+5,2026-04-21-16-00,24,Klinika za dječje bolesti Zagreb,kdb.narudzbe@kdb.hr,+38514600156,+38514600161
+6,2026-06-10-08-00,74,DZ Zagreb - Centar (DZZC (Kruge 44)),,+38514897666,
+7,2026-06-12-08-00,76,DZ Zagreb - Centar (DZZC (Kruge 44)),,+38514897666,
+8,2026-06-15-14-00,79,DZ Zagreb - Centar (DZZC (Kruge 44)),,+38514897666,
+9,2026-06-16-08-00,80,DZ Zagreb - Centar (DZZC (Kruge 44)),,+38514897666,
+10,2026-07-21-10-20,115,DZ Zagrebačke županije,,,
+11,2026-07-28-10-00,122,DZ Zagrebačke županije,,,
+12,2026-12-15-10-40,262,KBC Sestre milosrdnice (KBC SM VINOGRADSKA),"narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",+38513787593,+38513787792
+13,2026-12-21-12-00,268,KB Merkur,narucivanje@kb-merkur.hr,+38512253550,
+14,2026-12-21-12-20,268,KB Merkur,narucivanje@kb-merkur.hr,+38512253550,
+15,2026-12-21-12-40,268,KB Merkur,narucivanje@kb-merkur.hr,+38512253550,
+16,2026-12-28-09-20,275,KB Merkur,narucivanje@kb-merkur.hr,+38512253550,
+17,2026-12-28-09-40,275,KB Merkur,narucivanje@kb-merkur.hr,+38512253550,
+18,2027-01-14-10-40,292,KBC Sestre milosrdnice (KBC SM VINOGRADSKA),"narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",+38513787593,+38513787792
+19,2027-01-18-10-40,296,KBC Sestre milosrdnice (KBC SM VINOGRADSKA),"narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",+38513787593,+38513787792
+20,2027-01-19-10-40,297,KBC Sestre milosrdnice (KBC SM VINOGRADSKA),"narucivanje.vinogradska@kbcsm.hr, narucivanje.ilica@kbcsm.hr, narucivanje.draskoviceva@kbcsm.hr",+38513787593,+38513787792

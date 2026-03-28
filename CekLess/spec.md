@@ -100,7 +100,7 @@ tags: #Human
   - #TDD: Change affected tests, red, implement in *.py, tests green.
 - If you have problems with any of that, append a note to `journal.md` and report in final summary for #HITL.
 
-# TODO: Iteration 5
+# DONE: Iteration 5
 - Create `download-hospitals.py` that creates:
   - `hospitals.csv` and with fields `email,name,email,telefon,telefaks,address,webUrl,bookingUrl,mapsUrl`.  
   - Generate `webUrl` from email, but ping to check what the prefix is `[http:|https:]//[www.|]`.
@@ -127,4 +127,4 @@ tags: #Human
   - Plan of implementation and testing, with estimated max LTOK for each code file and test.
   - Inside `web-spec.md` you can link to cli interactive and lib .py files, to reuse code.
   - Human will review your plan, keep it short, <500 LTOK for `web-spec.md`.
-  - Don't implement that plan, just create it.
+  - Don't implement that web plan, just create it.
